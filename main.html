@@ -1,16 +1,41 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-	<link rel="stylesheet" href="styles.css">
+  <title>Form Login 2</title>
+  <script>
+    function showFormData(event) {
+      event.preventDefault(); // Prevent actual form submission
+
+      // Get form values
+      const firstName = document.forms["loginForm"]["First Name"].value;
+      const lastName = document.forms["loginForm"]["Last Name"].value;
+      const phoneNumber = document.forms["loginForm"]["Phone Number"].value;
+      const emailId = document.forms["loginForm"]["Email ID"].value;
+
+      // Create alert message
+      const message = `First Name: ${firstName} Last Name: ${lastName} Phone Number: ${phoneNumber} Email ID: ${emailId}`;
+
+      // Show alert
+      alert(message);
+    }
+  </script>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+  <h2>Form Login 2</h2>
+  <form name="loginForm" onsubmit="showFormData(event)">
+    <label for="firstName">First Name:</label>
+    <input type="text" name="First Name" id="firstName" required><br><br>
 
+    <label for="lastName">Last Name:</label>
+    <input type="text" name="Last Name" id="lastName" required><br><br>
+
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="text" name="Phone Number" id="phoneNumber" required><br><br>
+
+    <label for="emailId">Email ID:</label>
+    <input type="email" name="Email ID" id="emailId" required><br><br>
+
+    <input type="submit" value="Submit">
+  </form>
 </body>
-
 </html>
